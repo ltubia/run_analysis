@@ -45,7 +45,7 @@ It executes the course project requirements, not necessarily in the same order (
 It is not needed to download zip file as this function does it by itself and stores it in a temp file.
 
 ######Note 2: 
-For the sake of simplicity and optimization, not all steps are executed in the above order. They are executed in the following one:
+For the sake of simplicity and optimization, not all steps are executed in the above order. Instead, they are executed in the following one:
 
 1. Download file
 2. load common files for both train and test data: features and activiy labels.
