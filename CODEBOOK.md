@@ -1,6 +1,6 @@
 ####Description:
 According to "Getting and Cleaning Data" course project requirements, this function consumes several text files within a zip compressed file that represents data collected from the accelerometers from the Samsung Galaxy S smartphone and creates a text file containing a tidy data set, calculating average of std and mean measures grouped by activity and subject.
-Below, You'll be able to find a more detailed explanation about [Input](https://github.com/ltubia/run_analysis/blob/master/CODEBOOK.md#input-data) and [Output](https://github.com/ltubia/run_analysis/blob/master/CODEBOOK.md#output-data) data respectively.
+You'll be able to find a more detailed explanation about [Input](https://github.com/ltubia/run_analysis/blob/master/CODEBOOK.md#input-data) and [Output](https://github.com/ltubia/run_analysis/blob/master/CODEBOOK.md#output-data) data respectively below.
 
 ####Input data:
 Input data represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
@@ -25,13 +25,13 @@ Field names    | Description |   Source  | Applied Transformation
 tBodyAcc-XYZ | Body acceleration signals | tAcc-XYZ | Filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
 tGravityAcc-XYZ | Gravity acceleration signals | tAcc-XYZ |Filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
 tBodyAccJerk-XYZ | Body linear acceleration Jerk signals | tBodyAcc-XYZ | Body linear acceleration
-tBodyGyro-XYZ |  Gyroscope 3-axial raw signals | tGyro-XYZ |
+tBodyGyro-XYZ |  Gyroscope 3-axial raw signals | tGyro-XYZ |  Filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
 tBodyGyroJerk-XYZ | Jerk signals for angular velocity |tBodyGyro-XYZ |
 tBodyAccMag | Body acceleration in Euclidean magnitudes | tBodyAcc-XYZ | Euclidian Norm 
 tGravityAccMag | Gravity in Euclidian magnitudes | tGravityAcc-XYZ | Euclidian Norm
-tBodyAccJerkMag | Body linear acceleration Jerk signals in Euclidian magnitudes | tBodyAccJerk-XYZ
-tBodyGyroMag | Gyroscope 3-axial raw signals in Euclidian magnitudes | tBodyGyro-XYZ
-tBodyGyroJerkMag | Jerk signals for angular velocity in Euclidian magnitudes | tBodyGyroJerk-XYZ
+tBodyAccJerkMag | Body linear acceleration Jerk signals in Euclidian magnitudes | tBodyAccJerk-XYZ | Euclidian Norm 
+tBodyGyroMag | Gyroscope 3-axial raw signals in Euclidian magnitudes | tBodyGyro-XYZ | Euclidian Norm 
+tBodyGyroJerkMag | Jerk signals for angular velocity in Euclidian magnitudes | tBodyGyroJerk-XYZ | Euclidian Norm 
 fBodyAcc-XYZ | Body acceleration signals in Fourier frequency | tBodyAcc-XYZ | Fast Fourier Transform (FFT)
 fBodyAccJerk-XYZ |Body linear acceleration Jerk signals in Fourier frequency | tBodyAccJerk-XYZ | Fast Fourier Transform (FFT)
 fBodyGyro-XYZ | Gyroscope 3-axial raw signals with Fourier frequency applied | tBodyGyro-XYZ | Fast Fourier Transform (FFT)
@@ -79,5 +79,92 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 - tBodyGyroJerkMean
 
 ####Output data:
+Output text file contains a tidy data set, calculating average of std and mean measures grouped by activity and subject. It complies with the following requirements:
+
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+It contains the following data:
+
+######Grouping criteria: 
+The fields average is calculated and grouped by:
+- activity_id
+- activity_desc
+- subject_id
+
+######Measures: 
+Mean() and std() measures type average:
+- tBodyAcc_mean_X
+- tBodyAcc_mean_Y
+- tBodyAcc_mean_Z
+- tBodyAcc_std_X
+- tBodyAcc_std_Y
+- tBodyAcc_std_Z
+- tGravityAcc_mean_X
+- tGravityAcc_mean_Y
+- tGravityAcc_mean_Z
+- tGravityAcc_std_X
+- tGravityAcc_std_Y
+- tGravityAcc_std_Z
+- tBodyAccJerk_mean_X
+- tBodyAccJerk_mean_Y
+- tBodyAccJerk_mean_Z
+- tBodyAccJerk_std_X
+- tBodyAccJerk_std_Y
+- tBodyAccJerk_std_Z
+- tBodyGyro_mean_X
+- tBodyGyro_mean_Y
+- tBodyGyro_mean_Z
+- tBodyGyro_std_X
+- tBodyGyro_std_Y
+- tBodyGyro_std_Z
+- tBodyGyroJerk_mean_X
+- tBodyGyroJerk_mean_Y
+- tBodyGyroJerk_mean_Z
+- tBodyGyroJerk_std_X
+- tBodyGyroJerk_std_Y
+- tBodyGyroJerk_std_Z
+- tBodyAccMag_mean
+- tBodyAccMag_std
+- tGravityAccMag_mean
+- tGravityAccMag_std
+- tBodyAccJerkMag_mean
+- tBodyAccJerkMag_std
+- tBodyGyroMag_mean
+- tBodyGyroMag_std
+- tBodyGyroJerkMag_mean
+- tBodyGyroJerkMag_std
+- fBodyAcc_mean_X
+- fBodyAcc_mean_Y
+- fBodyAcc_mean_Z
+- fBodyAcc_std_X
+- fBodyAcc_std_Y
+- fBodyAcc_std_Z
+- fBodyAccJerk_mean_X
+- fBodyAccJerk_mean_Y
+- fBodyAccJerk_mean_Z
+- fBodyAccJerk_std_X
+- fBodyAccJerk_std_Y
+- fBodyAccJerk_std_Z
+- fBodyGyro_mean_X
+- fBodyGyro_mean_Y
+- fBodyGyro_mean_Z
+- fBodyGyro_std_X
+- fBodyGyro_std_Y
+- fBodyGyro_std_Z
+- fBodyAccMag_mean
+- fBodyAccMag_std
+- fBodyBodyAccJerkMag_mean
+- fBodyBodyAccJerkMag_std
+- fBodyBodyGyroMag_mean
+- fBodyBodyGyroMag_std
+- fBodyBodyGyroJerkMag_mean
+- fBodyBodyGyroJerkMag_std
+
+
+
 
 
