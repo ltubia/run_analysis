@@ -1,6 +1,6 @@
 ####Description:
 According to "Getting and Cleaning Data" course project requirements, this function consumes several text files within a zip compressed file that represents data collected from the accelerometers from the Samsung Galaxy S smartphone and creates a text file containing a tidy data set, calculating average of std and mean measures grouped by activity and subject.
-Below, You'll be able to find a more detailed explanation about input and output data respectively.
+Below, You'll be able to find a more detailed explanation about [Input](https://www.github.com) and output data respectively.
 
 ####Input data:
 Input data represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
@@ -16,7 +16,6 @@ For each record it is provided:
 - A 561-feature vector with time and frequency domain variables. 
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
-
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
@@ -78,9 +77,6 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 - tBodyAccJerkMean
 - tBodyGyroMean
 - tBodyGyroJerkMean
-
-
-
 
 ####Output data:
 
