@@ -19,6 +19,10 @@ getpwd()
 ```
 d<-read.table("<textfilenameHere>.txt", header = TRUE)
 ```
+*Check structure:*
+```
+str(d)                                                  
+```
 *Check for first 7th rows and first 7th columns of in memory dataset:*
 ```
 d[1:7,1:7]                                               
