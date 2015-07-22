@@ -164,6 +164,9 @@ Mean() and std() measures type average:
 - fBodyBodyGyroJerkMag_mean
 - fBodyBodyGyroJerkMag_std
 
+######File format:
+it's a space delimited text type format, with headers, and with double quotes as test qualifiers.
+
 
 
 
