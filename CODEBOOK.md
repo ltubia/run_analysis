@@ -91,7 +91,6 @@ It contains the following data:
 
 ######Grouping criteria: 
 The fields average is calculated and grouped by:
-- activity_id
 - activity_desc
 - subject_id
 
