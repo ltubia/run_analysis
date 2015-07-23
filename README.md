@@ -2,7 +2,7 @@
 It generates a tidy text file based on data collected from the accelerometers from the Samsung Galaxy S smartphone calculating average of all measures by each activity and subjects according to "Getting and cleaning Data" course project requirements.
 
 #### Steps for testing it:
-It's not neccesary to download file, as it does it automatically and manipulate it in a local temp directory.
+It's not neccesary to download file and unzip it, as it does both steps automatically and manipulate zip file in a local temp directory.
 
 *Load code:*
 ```
