@@ -3,6 +3,7 @@ It generates a tidy text file based on data collected from the accelerometers fr
 
 #### Steps for testing it:
 It's not neccesary to download file, as it does it automatically and manipulate it in a local temp directory.
+
 *Load code:*
 ```
 source("<YourPathHere>run_analysis.R")
