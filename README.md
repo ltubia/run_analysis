@@ -33,7 +33,7 @@ dim(d)
 ```
 ####Parameters:
 
-*textfilename* : a plain file name, preferably without extension, as this function will add .text extension automatically for you.
+*textfilename* : a plain file name, preferably without extension, as this function will add .txt extension automatically for you.
 
 ####Logic:
 
