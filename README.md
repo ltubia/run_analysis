@@ -2,7 +2,7 @@
 It generates a tidy text file based on data collected from the accelerometers from the Samsung Galaxy S smartphone calculating average of all measures by each activity and subjects according to "Getting and cleaning Data" course project requirements.
 
 #### Steps for testing it:
-
+It's not neccesary to download file, as it does it automatically and manipulate it in a local temp directory.
 *Load code:*
 ```
 source("<YourPathHere>run_analysis.R")
@@ -51,8 +51,8 @@ It is not needed to download zip file as this function does it by itself and sto
 ######Note 2: 
 For the sake of simplicity and optimization, not all steps are executed in the above order. Instead, they are executed in the following one:
 
-1. Download file
-2. load common files for both train and test data: features and activiy labels.
+1. Download file.
+2. Load common files for both train and test data: features and activiy labels.
 3. Load all test related files: x_test, y_test, subject_test.
 4. Merge them all in a unique test data table and assign labels and descriptive names to columns (Req 4 and Req 3).
 5. Load all train related files: x_train, y_train, subject_train.
