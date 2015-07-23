@@ -12,6 +12,7 @@
 #       getpwd()                                                # check for assignment3.txt file
 #       d<-read.table("<textfilenameHere>.txt", header = TRUE)  # read generated file
 #       d[1:7,1:7]                                              # check for first 7th rows and first 7th columns of in memory dataset 
+#       str(d)                                                  # check structure
 #       dim(d)                                                  # check dataset dimensions
 
 # run_analysis:
@@ -150,7 +151,7 @@ else
 ##
 ## 8. Extract activity and subject related columns and only "mean" and "std" dev measurements
 ##
-        meanstd<-all_data[,(names(all_data) %in% c("activity_id", "activity_desc", "subject_id") 
+        meanstd<-all_data[,(names(all_data) %in% c("activity_desc", "subject_id") 
                           | names(all_data) %in% names(all_data)[grep("\\_mean",names(all_data))] 
                           | names(all_data) %in% names(all_data)[grep("\\_std",names(all_data))] 
                            ) &
@@ -161,12 +162,15 @@ else
 ## 9. Calculate average of each variable for each activity and each subject and save it to disk
 ##
 
-        grp<-group_by(meanstd, activity_id, activity_desc, subject_id) # Set calculation Group
+        grp<-group_by(meanstd, activity_desc, subject_id) # Set calculation Group
         average<-grp %>% summarise_each(funs(mean))  # Use summarise_each to calculate all measures
 
         ## Write to disk
         write.table(average, file = filename, row.name=FALSE)
 
 message(paste0("the ",getwd(),"/", filename, " was file generated"))
+
+unlink(temp)
+
 }
 
