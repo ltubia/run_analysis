@@ -166,10 +166,13 @@ Mean() and std() measures type average:
 ######File format:
 It's a space delimited text type format, with headers, and with double quotes as text qualifiers.
 
-if the file is opened in text editor (notepad, etc.) columns will not viewed aligned because of text wrapping. To see it in an ordered way, open it with Excel indicating it's a space delimited file, and with double quotes as text identifier.
-Alternatively, it can be opened from R with the following command:
-
+if the file is opened using a text editor (notepad, etc.) columns will not viewed aligned because of text wrapping. To see it in an ordered way, open it with R with the following command:
+````
 d<-read.table("<textfilenameHere>.txt", header = TRUE)
+str(d)
+````
+
+Alternatively, it can be opened using EXCEL specifying it's a space delimited file with double quotes as text identifier.
 
 
 
