@@ -19,7 +19,10 @@
 # -------------
 #       Description:    function that generates a text file averaging all measures by each activity and subject 
 #
-#       Parameters: a plain file name, desirable without extension.
+#       Parameters: 
+#                       outputfilename: (Optional) the output file name. 
+#                                       if not specified, a file named "Run_analysis_tidy_data.txt" will be created by default.
+#
 # 
 #       Logic:          
 #               It executes the course project requirements, not necesarily in the same order (explained in more detail in Note 2 below)
@@ -47,26 +50,28 @@
 #
 #
 
-run_analysis<-function(filename="") {
+run_analysis<-function(outputfilename="") {
 
 # Check parameter
-if (filename=="") 
+if (outputfilename=="") 
         {
-        message("Error: A non empty file name without extension parameter must be indicated")
-        return()
+        outputfilename<-"Run_analysis_tidy_data.txt"
         }
-else
-        filename<-paste0(filename, ".txt")
+
                 
 #Load libraries
         library(plyr)
         library(dplyr)
 
 ## 1. Download file to temp file at local path
+temp<-"getdata-projectfiles-UCI HAR Dataset.zip" ## Get file from local path
+if (!file.exists(temp))
+        {
         fileurl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-        temp<-tempfile()
-        download.file(fileurl,temp, method="wget")
-
+        #temp<-tempfile()
+        download.file(fileurl,paste0(getwd(),"/",temp), method="wget")
+        }
+        
 ##
 ## 2. Load Common files
 ## ====================
@@ -166,11 +171,11 @@ else
         average<-grp %>% summarise_each(funs(mean))  # Use summarise_each to calculate all measures
 
         ## Write to disk
-        write.table(average, file = filename, row.name=FALSE)
+        write.table(average, file = outputfilename, row.name=FALSE)
 
-message(paste0("the ",getwd(),"/", filename, " was file generated"))
+message(paste0("the ",getwd(),"/", outputfilename, " file was generated"))
 
-unlink(temp)
+#unlink(temp)
 
 }
 
