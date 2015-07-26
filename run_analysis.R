@@ -1,14 +1,14 @@
 ## run_analysys.R
 ## ==============
 ##      Description:    runs steps neccesary for "Getting and cleaning Data" course project 
-##                      It generates a text file averiging all measures by each activity and subjects
+##                      It generates a text file averaging all measures by each activity and subjects
 ##                      Text file is generated at local path by default
 ##
 
 # Steps for testing it:
 # ---------------------
 #       source("<YourPathHere>run_analysis.R")                  # load code
-#       run_analysis("<textfilenameHere>")                      # creates and writes the average dataset. Caution!!!: "txt" extension is added automatically
+#       run_analysis("<outputfilename>")                        # creates and writes the average dataset. (optional parameter)
 #       getpwd()                                                # check for assignment3.txt file
 #       d<-read.table("<textfilenameHere>.txt", header = TRUE)  # read generated file
 #       d[1:7,1:7]                                              # check for first 7th rows and first 7th columns of in memory dataset 
