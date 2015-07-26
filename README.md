@@ -2,7 +2,7 @@
 It generates a tidy text file based on data collected from the accelerometers from the Samsung Galaxy S smartphone calculating average of all measures by each activity and subjects according to "Getting and cleaning Data" course project requirements.
 
 #### Steps for testing it:
-It's not necessary to download file and unzip it before executing this code, as it does both steps automatically and manipulate zip file in local work directory.
+It's not necessary to download Samsung source file and unzip it before executing this code, as it does both steps automatically and manipulate zip file in local work directory.
 
 *Load code:*
 ```
@@ -34,7 +34,7 @@ dim(d)
 ```
 ####Parameters:
 
-*outputfilename* : a file name for the output text file. This parameter is optional. If not specified a Run_analysis_tidy_data.txt named file will be created at the local working directory by default.
+*outputfilename* : a custom name for the output text file. This parameter is optional. If not specified a Run_analysis_tidy_data.txt named file will be created at the local working directory by default.
 
 ####Logic:
 
