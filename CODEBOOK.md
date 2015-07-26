@@ -1,6 +1,6 @@
 ####Description:
 According to "Getting and Cleaning Data" course project requirements, this function consumes several text files within a zip compressed file that represents data collected from the accelerometers from the Samsung Galaxy S smartphone and creates a text file containing a tidy data set, calculating average of std and mean measures grouped by activity and subject.
-You'll be able to find a more detailed explanation about [Input](https://github.com/ltubia/run_analysis/blob/master/CODEBOOK.md#input-data) and [Output](https://github.com/ltubia/run_analysis/blob/master/CODEBOOK.md#output-data) data respectively below.
+You'll be able to find below a more detailed explanation about [Input](https://github.com/ltubia/run_analysis/blob/master/CODEBOOK.md#input-data) and [Output](https://github.com/ltubia/run_analysis/blob/master/CODEBOOK.md#output-data) data respectively.
 
 ####Input data:
 Input data represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
@@ -164,8 +164,15 @@ Mean() and std() measures type average:
 - fBodyBodyGyroJerkMag_std
 
 ######File format:
-it's a space delimited text type format, with headers, and with double quotes as test qualifiers.
+It's a space delimited text type format, with headers, and with double quotes as text qualifiers.
 
+if the file is opened using a text editor (notepad, etc.) columns will not viewed aligned because of text wrapping. To see it in an ordered way, open it with R with the following command:
+````
+d<-read.table("<textfilenameHere>.txt", header = TRUE)
+str(d)
+````
+
+Alternatively, it can be opened using EXCEL specifying it's a space delimited file with double quotes as text identifier.
 
 
 
