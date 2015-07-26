@@ -47,7 +47,7 @@ It executes the course project requirements, not necessarily in the same order (
 - Req 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ######Note 1: 
-It is not needed to download zip file as this function does it by itself and stores it in a temp file.
+It is not needed to download zip file as this function does it by itself and stores it in the local working directory.
 
 ######Note 2: 
 For the sake of simplicity and optimization, not all steps are executed in the above order. Instead, they are executed in the following one:
